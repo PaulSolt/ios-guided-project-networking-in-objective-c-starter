@@ -14,12 +14,16 @@
 // Forward class declaration
 @class LSIQuake;
 
+// Swift
+// (quakes: [Quake]?, error: Error?)
+typedef void (^LSIQuakeFetcherCompletion)(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIQuakeFetcher : NSObject
 
 - (void)fetchQuakesInTimeInterval:(NSDateInterval *)interval
-                  completionBlock:(void (^)(NSArray<LSIQuake *> *quakes, NSError *error))completionBlock;
+                  completionBlock:(LSIQuakeFetcherCompletion)completionBlock;
 
 @end
 

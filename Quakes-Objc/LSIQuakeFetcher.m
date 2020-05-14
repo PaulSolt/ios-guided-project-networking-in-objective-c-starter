@@ -57,15 +57,13 @@ static NSString *baseURLString = @"https://earthquake.usgs.gov/fdsnws/event/1/qu
         // & = address of error
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
-        if (jsonError) {
+        if (jsonError) { // jsonError != nil
             completionBlock(nil, jsonError);
             return;
         }
         
         LSIQuakeResults *quakeResults = [[LSIQuakeResults alloc] initWithDictionary:dictionary];
         completionBlock(quakeResults.quakes, nil);
-        
-        
     }];
     
     [task resume];

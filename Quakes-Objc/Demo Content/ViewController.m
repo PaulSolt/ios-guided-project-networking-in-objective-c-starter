@@ -9,8 +9,14 @@
 #import "ViewController.h"
 #import "LSILog.h"
 #import "LSIFirstResponder.h"
+#import "LSIQuakeFetcher.h"
+#import "LSIQuake.h"
+#import "NSDateInterval+LSIDayInterval.h"
 
+// Class extension
 @interface ViewController ()
+
+@property (nonatomic) LSIQuakeFetcher *fetcher;
 
 @end
 
@@ -56,10 +62,31 @@
     [self fetchPhotosWithCompletition:^(NSArray<NSString *> *photos) {
         NSLog(@"Update UI with new photo: %@", photos.firstObject);
     }];
-    
-    [NSString stringWithFormat:@""];
-    //    [NSDateInterval dateIntervalByAddingDays:-7];
+
+    NSDateInterval *dateInterval = [NSDateInterval lsi_dateIntervalByAddingDays:-7]; // 3000 for 7 days vs. 300 ~1day
+    [self.fetcher fetchQuakesInTimeInterval:dateInterval completionBlock:^(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Quake Fetching Error: %@", error);
+            return;
+        }
+        
+        NSLog(@"Quakes: %ld", quakes.count);
+        // TODO: print quakes, add to map, etc.
+        
+    }];
 }
+
+// Properties
+
+// Lazy property
+- (LSIQuakeFetcher *)fetcher {
+    if (!_fetcher) {
+        _fetcher = [[LSIQuakeFetcher alloc] init];
+    }
+    return _fetcher;
+}
+
+// Methods
 
 - (void)fetchPhotosWithCompletition:(void (^)(NSArray<NSString *> *photos))completion {
     // network request ...

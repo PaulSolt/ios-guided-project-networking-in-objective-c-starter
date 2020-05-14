@@ -10,4 +10,10 @@
 
 @implementation LSIQuakeFetcher
 
+- (void)fetchQuakesInTimeInterval:(NSDateInterval *)interval
+                  completionBlock:(LSIQuakeFetcherCompletion)completionBlock {
+    
+    NSLog(@"fetch");
+}
+
 @end

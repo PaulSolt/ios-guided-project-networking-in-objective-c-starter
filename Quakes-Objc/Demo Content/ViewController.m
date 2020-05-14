@@ -56,6 +56,9 @@
     [self fetchPhotosWithCompletition:^(NSArray<NSString *> *photos) {
         NSLog(@"Update UI with new photo: %@", photos.firstObject);
     }];
+    
+    [NSString stringWithFormat:@""];
+    //    [NSDateInterval dateIntervalByAddingDays:-7];
 }
 
 - (void)fetchPhotosWithCompletition:(void (^)(NSArray<NSString *> *photos))completion {

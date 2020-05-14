@@ -10,6 +10,7 @@
 		BD33944E23FF22FC0048AA4C /* QuakeWithNullMag.json in Resources */ = {isa = PBXBuildFile; fileRef = BD33944D23FF22FC0048AA4C /* QuakeWithNullMag.json */; };
 		BD5CDCFD2423C5C10062E885 /* LSIQuakeResultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5CDCFC2423C5C10062E885 /* LSIQuakeResultsTests.m */; };
 		BDEF4E81246DABCB005D074F /* NSDateInterval+LSIDayInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEF4E80246DABCB005D074F /* NSDateInterval+LSIDayInterval.m */; };
+		BDEF4E84246DB203005D074F /* LSIQuakeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEF4E83246DB203005D074F /* LSIQuakeFetcher.m */; };
 		BDFC8F8223FDA09F00A39B21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC8F8123FDA09F00A39B21 /* AppDelegate.m */; };
 		BDFC8F8523FDA09F00A39B21 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC8F8423FDA09F00A39B21 /* SceneDelegate.m */; };
 		BDFC8F8823FDA09F00A39B21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC8F8723FDA09F00A39B21 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		BD5CDCFC2423C5C10062E885 /* LSIQuakeResultsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIQuakeResultsTests.m; sourceTree = "<group>"; };
 		BDEF4E7F246DABCB005D074F /* NSDateInterval+LSIDayInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateInterval+LSIDayInterval.h"; sourceTree = "<group>"; };
 		BDEF4E80246DABCB005D074F /* NSDateInterval+LSIDayInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateInterval+LSIDayInterval.m"; sourceTree = "<group>"; };
+		BDEF4E82246DB203005D074F /* LSIQuakeFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIQuakeFetcher.h; sourceTree = "<group>"; };
+		BDEF4E83246DB203005D074F /* LSIQuakeFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIQuakeFetcher.m; sourceTree = "<group>"; };
 		BDFC8F7D23FDA09F00A39B21 /* Quakes-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quakes-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFC8F8023FDA09F00A39B21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BDFC8F8123FDA09F00A39B21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				BDFC8F8423FDA09F00A39B21 /* SceneDelegate.m */,
 				BDEF4E7F246DABCB005D074F /* NSDateInterval+LSIDayInterval.h */,
 				BDEF4E80246DABCB005D074F /* NSDateInterval+LSIDayInterval.m */,
+				BDEF4E82246DB203005D074F /* LSIQuakeFetcher.h */,
+				BDEF4E83246DB203005D074F /* LSIQuakeFetcher.m */,
 				BD5CDCFF2423C6D30062E885 /* Demo Content */,
 				BD5CDCFE2423C6C90062E885 /* Quake Model */,
 				BDFC8F8923FDA09F00A39B21 /* Main.storyboard */,
@@ -308,6 +313,7 @@
 				BDFC8F8823FDA09F00A39B21 /* ViewController.m in Sources */,
 				BDFC8FB723FDA12B00A39B21 /* LSIErrors.m in Sources */,
 				BDFC8F8223FDA09F00A39B21 /* AppDelegate.m in Sources */,
+				BDEF4E84246DB203005D074F /* LSIQuakeFetcher.m in Sources */,
 				BDFC8F9323FDA0A100A39B21 /* main.m in Sources */,
 				BDEF4E81246DABCB005D074F /* NSDateInterval+LSIDayInterval.m in Sources */,
 				BDFC8F8523FDA09F00A39B21 /* SceneDelegate.m in Sources */,

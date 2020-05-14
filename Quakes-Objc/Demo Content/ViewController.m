@@ -33,6 +33,34 @@
     
     responder.name = @"John";
     NSLog(@"name: %@", responder.name);
+    
+    // Blocks = closures (un-named function)
+
+    // Swift
+    //let addNumbers = { (a: Int, b: Int) -> Int in
+    //    a + b
+    //}
+    //addNumbers(6, 3) // 9
+
+    // int x =
+
+    // returnType (^blockVariableName)(parameters) = ^returnType(parameters) {
+    // };
+    int (^addNumber)(int a, int b) = ^int(int a, int b) {
+        return a + b;
+    };
+
+    int result = addNumber(27, 101);
+    NSLog(@"result: %i", result);
+    
+    [self fetchPhotosWithCompletition:^(NSArray<NSString *> *photos) {
+        NSLog(@"Update UI with new photo: %@", photos.firstObject);
+    }];
+}
+
+- (void)fetchPhotosWithCompletition:(void (^)(NSArray<NSString *> *photos))completion {
+    // network request ...
+    completion(@[@"https://.../Photo.png"]);
 }
 
 

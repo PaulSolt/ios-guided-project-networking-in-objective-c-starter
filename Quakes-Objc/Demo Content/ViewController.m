@@ -33,6 +33,43 @@
     
     responder.name = @"John";
     NSLog(@"name: %@", responder.name);
+    
+    
+    
+    // Blocks
+
+    // Swift
+    //    let addNumbers: (Int, Int) -> Int = { (a: Int, b: Int) -> Int in {
+    //        a + b
+    //    }
+    //    addNumbers(6, 3) // return 9
+
+    // returnType (^blockName)(parameterList) = ^returnType(parameterList) {
+    //      return someExpressionUsingParameters;
+    // };
+
+    int (^addNumbers)(int a, int b) = ^int(int a, int b) {
+        NSLog(@"adding numbers %d + %d", a, b);
+        return a + b;
+    };
+
+    int result = addNumbers(5, 20);
+    NSLog(@"The sum is %d", result);
+    
+    
+    [self doWorkAndCallCompletition:^(int temperature) {
+        NSLog(@"The weather is %dºF in Rochester, NY", temperature);
+        
+        // add more code here ...
+    }];
+    
+    // Swift Extension = Objective-C Category
+}
+
+- (void)doWorkAndCallCompletition:(void (^)(int temperature))completion {
+    NSLog(@"Do some work ...");
+    
+    completion(72);
 }
 
 

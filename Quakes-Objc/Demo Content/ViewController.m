@@ -9,12 +9,25 @@
 #import "ViewController.h"
 #import "LSILog.h"
 #import "LSIFirstResponder.h"
+#import "LSIQuake.h"
+#import "LSIQuakeFetcher.h"
+#import "NSDateInterval+LSIDayInterval.h"
 
 @interface ViewController ()
+
+@property (nonatomic) LSIQuakeFetcher *quakeFetcher;
 
 @end
 
 @implementation ViewController
+
+// Lazy property
+- (LSIQuakeFetcher *)quakeFetcher {
+    if (_quakeFetcher == nil) {
+        _quakeFetcher = [[LSIQuakeFetcher alloc] init];
+    }
+    return _quakeFetcher;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,6 +77,15 @@
     }];
     
     // Swift Extension = Objective-C Category
+    
+    NSDateInterval *lastWeek = [NSDateInterval lsi_dateIntervalByAddingDays:-7];
+    [self.quakeFetcher fetchQuakesInTimeInterval:lastWeek completion:^(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error fetching quakes: \(error)");
+        }
+        
+        NSLog(@"There are %d earthquakes!", quakes.count);
+    }];
 }
 
 - (void)doWorkAndCallCompletition:(void (^)(int temperature))completion {

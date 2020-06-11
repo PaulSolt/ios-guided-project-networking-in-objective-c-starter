@@ -14,7 +14,7 @@
 - (instancetype)initWithQuakes:(NSArray<LSIQuake *> *)quakes {
     self = [super init];
     if (self) {
-        _quakes = quakes;
+        _quakes = [quakes copy];
     }
     return self;
 }
